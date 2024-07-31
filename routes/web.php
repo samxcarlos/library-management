@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\BookController;
 
-Artisan::command('inspire', function (){
-    $this->comment(Inspiring::qoute());
-})->purpose('Display an inspiring qoute')->hourly();
-//Route::get('/', function () {
-    //return view('welcome');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::resource('books', bookController::class);
